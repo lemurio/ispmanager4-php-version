@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <mgrdata>
+	<handler name="phpver.pl" type="cgi">
+		<func>phpversion</func>
+	</handler>
+	<metadata name="wwwdomain" type="list" key="name">
+		<toolbar>
+			<toolbtn func="phpversion" type="edit" img="t-php" name="phpversion" level="5"/>
+		</toolbar>
+    </metadata>
+	<metadata name="phpversion" type="form">
+		<form>
+			<field name="domain">
+               <input type="text" name="domain" empty="no" readonly="yes"/>
+            </field>
+			<field name="phpver">
+               <select name="phpver"/>
+            </field>
+		</form>
+		<jscript>
+		<script type="text/javascript">
+			var element =  document.getElementById('pcDiv');
+			if (element != null)
+			{
+			  var formdiv = document.getElementById('fieldsDiv');
+			  formdiv.style.display = 'none';
+			  var formbut = document.getElementsByName('suok');
+			   formbut[0].style.display = 'none';
+			}
+		</script>
+		</jscript>
+	</metadata>
+    <lang name="ru">
+        <messages name="phpversion">
+			<msg name="title">Выбор версии PHP</msg>
+			<msg name="phpver">Версия PHP </msg>
+			<msg name="domain">Домен </msg>
+			<msg name="7.0">7.0.8</msg>
+			<msg name="5.6">5.6.23</msg>
+			<msg name="5.5">5.5.37</msg>
+			<msg name="5.4">5.4.45</msg>
+			<msg name="5.3">5.3.29</msg>
+            <msg name="hint_phpver">Предпочитаемая версия PHP.</msg>
+			<msg name="dsr">Данная функция работает только если Ваши сайты работают в режиме CGI/FastCGI. В противном случае Ваши сайты будут работать на версии 5.4.</msg>
+		</messages>
+		<messages name="wwwdomain">
+			<msg name="hint_phpversion">Версия PHP для Вашего сайта</msg>
+			<msg name="short_phpversion">Версия PHP</msg>
+			<msg name="phpversion">Предпочитаемая версия PHP.</msg>
+		</messages>
+    </lang>
+ </mgrdata>
